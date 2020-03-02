@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Simone Pittiglio</Authors>
+    <Company>Simone Pittiglio</Company>
+    <PackageTags>Xamarin Forms, Xaml, Control, BottomSheet, MaterialDesign</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/SimonePit/CoolBottomSheet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SimonePit/CoolBottomSheet.git</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="BottomSheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>

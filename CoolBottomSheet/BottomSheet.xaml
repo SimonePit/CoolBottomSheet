@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="bottomSheetComponent"
+             x:Class="CoolBottomSheet.BottomSheet">
+    <ContentView.GestureRecognizers>
+        <PanGestureRecognizer PanUpdated="OnPanUpdated" />
+    </ContentView.GestureRecognizers>
+    <ContentView.Content>
+        <RelativeLayout x:Name="relativeLayout">
+            <ContentView x:Name="contentview" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}">
+                <ContentView.Content>
+                    <ContentView Content="{Binding ContentMainPage, Source={x:Reference bottomSheetComponent}}" />
+                </ContentView.Content>
+
+            </ContentView>
+            <Frame
+                x:Name="frame"
+                Padding="1,4,1,0"
+                BackgroundColor="#faf9f8"
+                CornerRadius="15"
+                HasShadow="true"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                       Property=Height,
+                                                                       Factor=1.2,
+                                                                       Constant=0}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Property=Width,
+                                                                      Factor=1,
+                                                                      Constant=0}">
+                <ContentView Content="{Binding ContentBottomSheet, Source={x:Reference bottomSheetComponent}}" />
+            </Frame>
+            <Button
+                x:Name="expandeButton"
+                Padding="0"
+                BackgroundColor="Green"
+                Clicked="ExpandeButton_Clicked"
+                CornerRadius="20"
+                FontSize="15"
+                HeightRequest="25"
+                IsVisible="{Binding IsBottomButtonEnable, Source={x:Reference bottomSheetComponent}}"
+                Opacity="0"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Property=Width,
+                                                                      Factor=.5,
+                                                                      Constant=0}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Property=Width,
+                                                                  Factor=.25,
+                                                                  Constant=0}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Property=Height,
+                                                                  Factor=.9}"
+                Text="{Binding TextBottomButton, Source={x:Reference bottomSheetComponent}}"
+                TextColor="White" />
+        </RelativeLayout>
+    </ContentView.Content>
+</ContentView>

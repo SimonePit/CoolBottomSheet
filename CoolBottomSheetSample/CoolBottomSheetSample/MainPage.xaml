@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:customControl="clr-namespace:CoolBottomSheet;assembly=CoolBottomSheet"
+             mc:Ignorable="d"
+             x:Class="CoolBottomSheetSample.MainPage">
+
+    <customControl:BottomSheet
+        PercentageHeightMainPage=".5" 
+        PercentageLockMainPageTranslation=".3"
+        PercentageHideBottomSheet=".8"
+        PercentageExpandBottomSheet=".8"
+        MinPercentageBottomSheetSwipe="1"
+        MaxPercentageBottomSheetSwipe="-0.1"
+        TextBottomButton="Expand">
+        <customControl:BottomSheet.ContentMainPage>
+            <StackLayout>
+                <!-- Place new controls here -->
+                <Label Text="Welcome to Xamarin.Forms!" 
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </customControl:BottomSheet.ContentMainPage>
+        <customControl:BottomSheet.ContentBottomSheet>
+            <StackLayout BackgroundColor="Red"/>
+        </customControl:BottomSheet.ContentBottomSheet>
+    </customControl:BottomSheet>
+   
+
+</ContentPage>
