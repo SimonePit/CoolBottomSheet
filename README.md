@@ -1,3 +1,6 @@
+
+[![Nuget](https://img.shields.io/badge/Nuget-1.0.1-orange?style=flat)](https://www.nuget.org/packages/CoolBottomSheet/)  
+
 <img height="400" src="https://github.com/SimonePit/CoolBottomSheet/blob/master/CoolBottomSheetGif.gif?v=3&s=200" title="gif" alt="gif"></a>
 
 # CoolBottomSheet
