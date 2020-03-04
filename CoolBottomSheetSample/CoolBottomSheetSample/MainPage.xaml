@@ -15,7 +15,7 @@
         MinPercentageBottomSheetSwipe=".95"
         MaxPercentageBottomSheetSwipe="-0.03"
         CornerRadiusBottomSheet="25"
-        BackgroundBottomSheetColor="LightGray"
+        BackgroundBottomSheetColor="White"
         BottomButtonText="Expand">
         <customControl:BottomSheet.ContentMainPage>
             <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
@@ -37,19 +37,22 @@
             </StackLayout>
         </customControl:BottomSheet.ContentMainPage>
         <customControl:BottomSheet.ContentBottomSheet>
-            <StackLayout Padding="20">
-                <Label 
-                    TextColor="Black"
-                    FontSize="22"
-                    FontAttributes="Bold"
-                    Text="... and this is the bottom sheet.." 
-                    HorizontalOptions="Center"
-                     />
-                <Label 
-                    Margin="0,30,0,0"
-                    TextColor="Black"
-                    FontSize="18"
-                    Text="You can drag and drop your bottom sheet where you want in the screen"/>
+            <StackLayout Spacing="5">
+                <SearchBar
+                x:Name="SearchBox"
+                BackgroundColor="Transparent"
+                Placeholder="Cerca fermata bus" />
+                <StackLayout
+                x:Name="GridFilter"
+                Padding="10,10,10,10"
+                BackgroundColor="#edebe9"
+                Orientation="Vertical">
+                    <Grid x:Name="ChipsGrid" />
+                </StackLayout>
+                <Label
+                HorizontalOptions="Center"
+                Text="Qua ci sarà la lista delle fermate"
+                VerticalOptions="Center" />
             </StackLayout>
         </customControl:BottomSheet.ContentBottomSheet>
     </customControl:BottomSheet>

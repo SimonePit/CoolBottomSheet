@@ -17,6 +17,7 @@
             </ContentView>
             <Frame
                 x:Name="frame"
+                Padding="0,15,0,0"
                 BackgroundColor="{Binding BackgroundBottomSheetColor, Source={x:Reference bottomSheetComponent}}"
                 CornerRadius="{Binding CornerRadiusBottomSheet, Source={x:Reference bottomSheetComponent}}"
                 HasShadow="true"
