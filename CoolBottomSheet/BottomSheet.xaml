@@ -11,17 +11,14 @@
     </ContentView.GestureRecognizers>
     <ContentView.Content>
         <RelativeLayout x:Name="relativeLayout">
-            <ContentView x:Name="contentview" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}">
-                <ContentView.Content>
-                    <ContentView Content="{Binding ContentMainPage, Source={x:Reference bottomSheetComponent}}" />
-                </ContentView.Content>
-
+            <ContentView x:Name="contentview" 
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}"
+                         Content="{Binding ContentMainPage, Source={x:Reference bottomSheetComponent}}">
             </ContentView>
             <Frame
                 x:Name="frame"
-                Padding="1,4,1,0"
-                BackgroundColor="#faf9f8"
-                CornerRadius="15"
+                BackgroundColor="{Binding BackgroundBottomSheetColor, Source={x:Reference bottomSheetComponent}}"
+                CornerRadius="{Binding CornerRadiusBottomSheet, Source={x:Reference bottomSheetComponent}}"
                 HasShadow="true"
                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
                                                                        Property=Height,
@@ -31,7 +28,16 @@
                                                                       Property=Width,
                                                                       Factor=1,
                                                                       Constant=0}">
-                <ContentView Content="{Binding ContentBottomSheet, Source={x:Reference bottomSheetComponent}}" />
+                <StackLayout>
+                    <BoxView
+                        BackgroundColor="Gray"
+                        CornerRadius="2"
+                        HeightRequest="5"
+                        HorizontalOptions="Center"
+                        WidthRequest="50" />
+                    <ContentView Content="{Binding ContentBottomSheet, Source={x:Reference bottomSheetComponent}}" />
+                </StackLayout>
+                
             </Frame>
             <Button
                 x:Name="expandeButton"
@@ -54,7 +60,7 @@
                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
                                                                   Property=Height,
                                                                   Factor=.9}"
-                Text="{Binding TextBottomButton, Source={x:Reference bottomSheetComponent}}"
+                Text="{Binding BottomButtonText, Source={x:Reference bottomSheetComponent}}"
                 TextColor="White" />
         </RelativeLayout>
     </ContentView.Content>

@@ -211,16 +211,16 @@ namespace CoolBottomSheet
         }
 
         //TESTO DEL BOTTONE CHE APPARE QUANDO IL BOTTOM SHEET SI CHIUDE
-        public static readonly BindableProperty TextBottomButtonProperty = BindableProperty.Create(
-           nameof(TextBottomButton),
+        public static readonly BindableProperty BottomButtonTextProperty = BindableProperty.Create(
+           nameof(BottomButtonText),
            typeof(string),
            typeof(BottomSheet),
            defaultValue: "Expand"
            );
-        public string TextBottomButton
+        public string BottomButtonText
         {
-            get => (string)GetValue(TextBottomButtonProperty);
-            set => SetValue(TextBottomButtonProperty, value);
+            get => (string)GetValue(BottomButtonTextProperty);
+            set => SetValue(BottomButtonTextProperty, value);
         }
 
         //PROPERTY CHE STABILISCE SE DEVE ESISTERE IL BOTTOM BUTTON
@@ -236,5 +236,33 @@ namespace CoolBottomSheet
             set => SetValue(IsBottomButtonEnableProperty, value);
         }
 
+        /*
+          Corner radius bottom sheet
+        */
+        public static readonly BindableProperty CornerRadiusBottomSheetProperty = BindableProperty.Create(
+           nameof(CornerRadiusBottomSheet),
+           typeof(int),
+           typeof(BottomSheet),
+           defaultValue: 15
+           );
+        public int CornerRadiusBottomSheet
+        {
+            get => (int)GetValue(CornerRadiusBottomSheetProperty);
+            set => SetValue(CornerRadiusBottomSheetProperty, value);
+        }
+
+        /*
+         background bottom sheet color
+       */
+        public static readonly BindableProperty BackgroundBottomSheetColorProperty = BindableProperty.Create(
+           nameof(BackgroundBottomSheetColor),
+           typeof(Color),
+           typeof(BottomSheet)
+           );
+        public Color BackgroundBottomSheetColor
+        {
+            get => (Color)GetValue(BackgroundBottomSheetColorProperty);
+            set => SetValue(BackgroundBottomSheetColorProperty, value);
+        }
     }
 }

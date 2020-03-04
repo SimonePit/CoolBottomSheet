@@ -8,23 +8,49 @@
              x:Class="CoolBottomSheetSample.MainPage">
 
     <customControl:BottomSheet
-        PercentageHeightMainPage=".5" 
+        PercentageHeightMainPage=".8" 
         PercentageLockMainPageTranslation=".3"
-        PercentageHideBottomSheet=".8"
+        PercentageHideBottomSheet=".9"
         PercentageExpandBottomSheet=".8"
-        MinPercentageBottomSheetSwipe="1"
-        MaxPercentageBottomSheetSwipe="-0.1"
-        TextBottomButton="Expand">
+        MinPercentageBottomSheetSwipe=".95"
+        MaxPercentageBottomSheetSwipe="-0.03"
+        CornerRadiusBottomSheet="25"
+        BackgroundBottomSheetColor="LightGray"
+        BottomButtonText="Expand">
         <customControl:BottomSheet.ContentMainPage>
-            <StackLayout>
+            <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
                 <!-- Place new controls here -->
-                <Label Text="Welcome to Xamarin.Forms!" 
+                <Label Text="Welcome to Xamarin Forms Bottom Sheet"
+                       TextColor="Blue"
                     HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand" />
+                       VerticalOptions="Start"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                    />
+                <Label 
+                    Margin="0,50,0,0"
+                    TextColor="Black"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    Text="This is the main page..." 
+                    HorizontalOptions="Center" />
             </StackLayout>
         </customControl:BottomSheet.ContentMainPage>
         <customControl:BottomSheet.ContentBottomSheet>
-            <StackLayout BackgroundColor="Red"/>
+            <StackLayout Padding="20">
+                <Label 
+                    TextColor="Black"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    Text="... and this is the bottom sheet.." 
+                    HorizontalOptions="Center"
+                     />
+                <Label 
+                    Margin="0,30,0,0"
+                    TextColor="Black"
+                    FontSize="18"
+                    Text="You can drag and drop your bottom sheet where you want in the screen"/>
+            </StackLayout>
         </customControl:BottomSheet.ContentBottomSheet>
     </customControl:BottomSheet>
    

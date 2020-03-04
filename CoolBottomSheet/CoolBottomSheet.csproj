@@ -8,15 +8,24 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/SimonePit/CoolBottomSheet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/SimonePit/CoolBottomSheet.git</RepositoryUrl>
+    <Description>Xamarin forms material design bottom sheet</Description>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile>license</PackageLicenseFile>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
+    <PackageReference Include="Xamarin.Forms" Version="3.5.0.169047" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="BottomSheet.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Include="..\..\..\..\Desktop\license">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 
