@@ -1,20 +1,24 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Name="bottomSheetComponent"
-             x:Class="CoolBottomSheet.BottomSheet">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="CoolBottomSheet.BottomSheet"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="bottomSheetComponent"
+    mc:Ignorable="d">
     <ContentView.GestureRecognizers>
         <PanGestureRecognizer PanUpdated="OnPanUpdated" />
     </ContentView.GestureRecognizers>
     <ContentView.Content>
         <RelativeLayout x:Name="relativeLayout">
-            <ContentView x:Name="contentview" 
-                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}"
-                         Content="{Binding ContentMainPage, Source={x:Reference bottomSheetComponent}}">
-            </ContentView>
+            <ContentView
+                x:Name="contentview"
+                Content="{Binding ContentMainPage, Source={x:Reference bottomSheetComponent}}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Property=Width,
+                                                                      Factor=1,
+                                                                      Constant=0}" />
             <Frame
                 x:Name="frame"
                 Padding="0,15,0,0"
@@ -35,10 +39,11 @@
                         CornerRadius="2"
                         HeightRequest="5"
                         HorizontalOptions="Center"
+                        IsVisible="{Binding IsSwipeIconEnabled, Source={x:Reference bottomSheetComponent}}"
                         WidthRequest="50" />
                     <ContentView Content="{Binding ContentBottomSheet, Source={x:Reference bottomSheetComponent}}" />
                 </StackLayout>
-                
+
             </Frame>
             <Button
                 x:Name="expandeButton"

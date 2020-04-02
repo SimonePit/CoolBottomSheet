@@ -27,7 +27,7 @@ namespace CoolBottomSheet
             }));
             RelativeLayout.SetYConstraint(frame, Constraint.RelativeToParent((parent) =>
             {
-                return parent.Height * PercentageHeightMainPage;
+                return parent.Height * PercentageHeightMainPage-CornerRadiusBottomSheet;
             }));
         }
 
@@ -64,7 +64,7 @@ namespace CoolBottomSheet
                     factorScale = finalFramePos / Height;
                     if (factorScale > PercentageHideBottomSheet)
                     {
-                        var ytrans = Height * (1 - PercentageHeightMainPage);
+                        var ytrans = (Height * (1 - PercentageHeightMainPage)) +CornerRadiusBottomSheet;
                         frame.TranslateTo(0, ytrans, 300, Easing.BounceOut);
                         y = ytrans;
                         RelativeLayout.SetHeightConstraint(contentview, Constraint.RelativeToParent((parent) =>
@@ -84,7 +84,7 @@ namespace CoolBottomSheet
 
         private void ExpandeButton_Clicked(object sender, EventArgs e)
         {
-            var translationY = frame.TranslationY - (Height - Height * PercentageExpandBottomSheet);
+            var translationY = (frame.TranslationY - (Height - Height * PercentageExpandBottomSheet))-CornerRadiusBottomSheet;
             RelativeLayout.SetHeightConstraint(contentview, Constraint.RelativeToParent((parent) =>
             {
                 return parent.Height * PercentageExpandBottomSheet;
@@ -221,6 +221,19 @@ namespace CoolBottomSheet
         {
             get => (string)GetValue(BottomButtonTextProperty);
             set => SetValue(BottomButtonTextProperty, value);
+        }
+
+        //PROPERTY CHE STABILISCE SE DEVE ESISTERE IL BOTTOM BUTTON
+        public static readonly BindableProperty IsSwipeIconVisibleProperty = BindableProperty.Create(
+           nameof(IsSwipeIconVisible),
+           typeof(bool),
+           typeof(BottomSheet),
+           defaultValue: true
+           );
+        public bool IsSwipeIconVisible
+        {
+            get => (bool)GetValue(IsSwipeIconVisibleProperty);
+            set => SetValue(IsSwipeIconVisibleProperty, value);
         }
 
         //PROPERTY CHE STABILISCE SE DEVE ESISTERE IL BOTTOM BUTTON
